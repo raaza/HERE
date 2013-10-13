@@ -1,0 +1,83 @@
+package Here; 
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+ 
+public class Party{
+	
+	public static void main(String[] args) {
+	//public LinkedList<Friend> loadNames(){	
+		
+		String csvFile = "Names.csv";
+		BufferedReader br = null;
+		String line = "";
+		String [] Master = null;
+ 
+		try {
+			
+			br = new BufferedReader(new FileReader(csvFile));
+			while ((line = br.readLine()) != null) {
+ 				Master = line.split(",");
+ 				
+			}
+ 
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			if (br != null) {
+				try {
+					br.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		
+		
+	    String lastname = Master[0];
+	    String firstname = Master[1];
+	    String note = Master[5];
+	    
+		Character gender = Master[2].charAt(0);
+		
+		boolean attend;
+		if(Master[3].equals("FALSE")){
+			attend = false;
+		}
+		else if(Master[3].equals("TRUE")){
+			attend = true;
+		}
+		
+		int guests = Integer.parseInt(Master[4]);
+		
+		boolean tag1 = false;;
+		if(Master[6].equals("FALSE")){
+			tag1 = false;
+		}
+		else if(Master[6].equals("TRUE")){
+			tag1= true;
+		}
+		
+		boolean tag2 = false;
+		if(Master[7].equals("FALSE")){
+			tag2 = false;
+		}
+		else if(Master[7].equals("TRUE")){
+			tag2 = true;
+		}
+		
+		boolean tag3 = false;
+		if(Master[8].equals("FALSE")){
+			tag3 = false;
+		}
+		else if(Master[8].equals("TRUE")){
+			tag3 = true;
+		}
+		
+	}
+ 
+}
