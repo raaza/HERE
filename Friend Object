@@ -1,0 +1,135 @@
+//The basic Friend class is the main method we will be manipulating.
+//It contains information on each person who is in the party and 
+public class Friend {
+	
+	//Important Fields
+	private String firstName;
+	private String lastName;
+	private char gender;
+	
+	//Check-In Fields
+	private boolean attending;
+	private int guests;
+	
+	//Descriptive Fields
+	private String note;
+	private boolean tag1;
+	private boolean tag2;
+	private boolean tag3;
+	
+/*
+ * setFirstName
+ * Accessor method 
+ * @param firstName The first name of the person.
+ */
+	public void setFirstName(String firstName)
+	{
+		String frontEnd = Character.toString(firstName.charAt(0)).toUpperCase();
+		
+		String backEnd = firstName.substring(1);
+		backEnd = backEnd.toLowerCase();
+		
+		firstName = frontEnd.concat(backEnd);
+		this.firstName = firstName;
+	}
+	
+	public String getFirstName()
+	{
+		return firstName;
+	}
+	
+	public void setLastName(String lastName)
+	{
+		String frontEnd = Character.toString(lastName.charAt(0)).toLowerCase();
+	
+		String backEnd = lastName.substring(1);
+		backEnd = backEnd.toLowerCase();
+		
+		lastName = frontEnd.concat(backEnd);
+		this.lastName = lastName;
+	}
+	
+	public String getLastName()
+	{
+		return lastName;
+	}
+	
+	public void setGender(char gender)
+	{
+		gender = Character.toUpperCase(gender);
+		this.gender = gender;
+	}
+	
+	public char getGender()
+	{
+		return gender;
+	}
+	
+	public void setAttending(boolean attending)
+	{
+		this.attending = attending;
+	}
+	
+	public boolean getAttending()
+	{
+		return attending;
+	}
+	
+	public void setGuests(int guests)
+	{
+		if (guests > 9)
+			guests = 9;
+		if (guests < 0)
+			guests = 0;
+		this.guests = guests;
+	}
+	
+	public int getGuests()
+	{
+		return guests;
+	}
+	
+	public void setNote(String note)
+	{
+		this.note = note;
+	}
+	
+	public String getNote()
+	{
+		return note;
+	}
+	
+	public void setTag1(boolean tag)
+	{
+		this.tag1 = tag;
+	}
+	
+	public boolean getTat1()
+	{
+		return tag1;
+	}
+	
+	public void setTag2(boolean tag)
+	{
+		this.tag2 = tag;
+	}
+	
+	public boolean getTat2()
+	{
+		return tag2;
+	}
+	
+	public void setTag3(boolean tag)
+	{
+		this.tag3 = tag;
+	}
+	
+	public boolean getTat3()
+	{
+		return tag3;
+	}
+	
+	public static void main(String[] args)
+	{
+	}
+}
