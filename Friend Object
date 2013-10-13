@@ -17,6 +17,14 @@ public class Friend {
 	private boolean tag2;
 	private boolean tag3;
 	
+	
+	public Friend(String firstName, String lastName, char Gender)
+	{
+		setFirstName(firstName);
+		setLastName(lastName);
+		setGender(gender);
+	}
+	
 /*
  * setFirstName
  * Accessor method 
